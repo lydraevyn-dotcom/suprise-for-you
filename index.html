@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff0f4">
+<title>Untuk Kamu ♡</title>
+<style>
+:root{--pink:#f4a9bf;--deep:#b94e70;--cream:#fff9f5;--ink:#553b46;--soft:#ffe4ec}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+button,input{font:inherit}
+button{cursor:pointer}
+.hidden{display:none!important}
+#lock{min-height:100svh;display:grid;place-items:center;padding:22px;background:radial-gradient(circle at top,#ffe0e9,transparent 55%),var(--cream)}
+.lock-card{width:min(100%,390px);text-align:center;background:#ffffffd9;border:1px solid #f4c9d6;border-radius:26px;padding:30px 23px;box-shadow:0 18px 50px #b94e7018}
+.heart{font-size:42px;animation:beat 1.2s infinite}
+@keyframes beat{50%{transform:scale(1.13)}}
+h1,h2,p{margin-top:0}
+.lock-card h1{font-size:27px;margin:10px 0}
+.lock-card p{font-family:Arial,sans-serif;font-size:14px;line-height:1.6;color:#856571}
+input{width:100%;padding:14px;border:1px solid #efbdcd;border-radius:14px;background:#fffafa;outline:none;text-align:center;margin:10px 0}
+input:focus{border-color:var(--deep)}
+.btn{border:0;border-radius:999px;background:var(--deep);color:white;padding:13px 21px;box-shadow:0 7px 18px #b94e7026;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.light{background:#fff;color:var(--deep);border:1px solid #efbdcd;box-shadow:none}
+#error{color:#b82c55;min-height:20px;font:13px Arial,sans-serif}
+#site{overflow:hidden}
+.topbar{position:sticky;top:0;z-index:4;display:flex;justify-content:space-between;align-items:center;padding:12px 17px;background:#fff9f5eF;backdrop-filter:blur(12px);border-bottom:1px solid #f8dce5}
+.brand{font-size:17px;color:var(--deep)}
+.music{font:13px Arial,sans-serif;border:1px solid #f0c6d3;background:white;border-radius:999px;padding:9px 13px;color:var(--deep)}
+.hero{min-height:83svh;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 22px 70px;position:relative;background:linear-gradient(160deg,#fff6f8,#ffe5ed 58%,#fff9f5)}
+.hero:before,.hero:after{content:"♡";position:absolute;color:#e8a0b6;font-size:60px;opacity:.55}
+.hero:before{left:8%;top:14%;transform:rotate(-18deg)}.hero:after{right:8%;bottom:12%;transform:rotate(17deg)}
+.hero-inner{max-width:650px;position:relative;z-index:1}
+.eyebrow{font:11px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--deep)}
+.hero h1{font-size:clamp(39px,10vw,72px);line-height:1.04;margin:18px 0;color:#9f3f61;font-weight:normal}
+.hero p{font-size:18px;line-height:1.7;max-width:480px;margin:0 auto 25px;color:#795866}
+.scroll{margin-top:27px;font:12px Arial,sans-serif;letter-spacing:2px;color:#ad7185}
+section{padding:66px 20px}
+.section-inner{width:min(100%,820px);margin:auto}
+.section-label{text-align:center;font:11px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--deep);margin-bottom:12px}
+.section-title{text-align:center;font-size:clamp(29px,7vw,43px);font-weight:normal;color:#9f3f61;margin-bottom:16px}
+.intro{text-align:center;line-height:1.8;color:#876c77;max-width:550px;margin:0 auto 30px;font-size:15px}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.photo{border-radius:19px;overflow:hidden;background:#f9dbe5;min-height:190px;position:relative;box-shadow:0 9px 24px #8c526012}
+.photo img{display:block;width:100%;height:100%;min-height:190px;object-fit:cover}
+.photo .caption{position:absolute;bottom:0;left:0;right:0;padding:30px 12px 12px;background:linear-gradient(transparent,#3e202bbd);color:white;font-size:14px}
+.photo.wide{grid-column:1/-1;min-height:230px}.photo.wide img{min-height:230px}
+.letter-wrap{background:#fff0f4}
+.letter{max-width:620px;margin:28px auto 0;padding:clamp(23px,6vw,42px);background:#fffdfa;border:1px solid #f5d5df;border-radius:4px;box-shadow:0 12px 35px #9d546410;position:relative}
+.letter:before{content:"";position:absolute;inset:8px;border:1px solid #f7e1e7;pointer-events:none}
+.letter p{position:relative;font-size:16px;line-height:1.95;color:#71525e}
+.signature{font-style:italic;text-align:right;color:var(--deep)!important}
+.memory-note{text-align:center;font-size:13px;color:#a57b8a;margin-top:18px}
+.proposal{text-align:center;background:linear-gradient(#fff9f5,#ffe9f0)}
+.proposal-box{max-width:600px;margin:28px auto 0;padding:30px 20px;border:1px solid #f2cad7;background:#ffffffb8;border-radius:25px}
+.proposal-box h3{font-size:clamp(25px,6vw,37px);font-weight:normal;line-height:1.35;color:#9f3f61}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px;min-height:48px}
+#yesMessage{margin:22px auto 0;line-height:1.8;color:#a13e61;font-size:19px;max-width:440px}
+footer{text-align:center;padding:30px 18px 40px;font-size:12px;color:#a27d8b;background:#fff9f5}
+footer .tiny-heart{font-size:20px;color:#d66d90}
+@media(min-width:650px){.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}.photo.wide{grid-column:span 2}.photo,.photo img{min-height:230px}.photo.wide,.photo.wide img{min-height:260px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<!-- GANTI PASSWORD di bagian script: const PASSWORD = "sayangku"; -->
+<div id="lock">
+  <div class="lock-card">
+    <div class="heart">♡</div>
+    <p class="eyebrow">a little secret for you</p>
+    <h1>Hai, sayang.</h1>
+    <p>Ada sesuatu kecil yang aku siapin buat kamu. Masukin password rahasianya dulu, ya. 🤍</p>
+    <form id="passwordForm">
+      <input id="passwordInput" type="password" placeholder="password rahasia..." autocomplete="off" aria-label="Password rahasia">
+      <button class="btn" type="submit">Buka hadiah ♡</button>
+    </form>
+    <div id="error" role="status"></div>
+    <p style="font-size:11px">petunjuk: panggilan kesayangan kamu ✿</p>
+  </div>
+</div>
+
+<div id="site" class="hidden">
+  <header class="topbar">
+    <div class="brand">for my favorite person ♡</div>
+    <button class="music" id="musicButton" type="button">♫ Putar musik</button>
+  </header>
+  <audio id="song" loop preload="none">
+    <!-- Taruh file musik bernama lagu.mp3 di folder yang sama dengan index.html -->
+    <source src="lagu.mp3" type="audio/mpeg">
+  </audio>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <p class="eyebrow">made with love, just for you</p>
+        <h1>To my<br>favorite human.</h1>
+        <p>Kalau dunia lagi berisik, semoga halaman kecil ini bisa jadi tempat paling tenang buat kamu.</p>
+        <button class="btn" onclick="document.querySelector('#memories').scrollIntoView({behavior:'smooth'})">Lihat kejutan kecil ↓</button>
+        <div class="scroll">SCROLL PELAN-PELAN ♡</div>
+      </div>
+    </section>
+
+    <section id="memories">
+      <div class="section-inner">
+        <p class="section-label">our little universe</p>
+        <h2 class="section-title">Potongan cerita kita</h2>
+        <p class="intro">Hal-hal sederhana jadi spesial sejak ada kamu. Ganti foto-foto ini dengan foto kalian sendiri, ya!</p>
+        <div class="gallery">
+          <div class="photo wide"><img src="foto1.jpg" alt="Foto kenangan pertama" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#f3b6c9,#fff0f4)'"><div class="caption">salah satu hari favoritku ♡</div></div>
+          <div class="photo"><img src="foto2.jpg" alt="Foto kenangan kedua" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#e9c8df,#fff0f4)'"><div class="caption">kamu, selalu kamu</div></div>
+          <div class="photo"><img src="foto3.jpg" alt="Foto kenangan ketiga" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#f5d5b9,#fff0f4)'"><div class="caption">little moments</div></div>
+        </div>
+        <p class="memory-note">♡ bukan soal seberapa sempurna fotonya, tapi cerita di baliknya ♡</p>
+      </div>
+    </section>
+
+    <section class="letter-wrap" id="letter">
+      <div class="section-inner">
+        <p class="section-label">a letter from my heart</p>
+        <h2 class="section-title">Buat kamu, sayang.</h2>
+        <div class="letter">
+          <p>Hai, kamu. 🤍</p>
+          <p>Aku mungkin nggak selalu pintar menyusun kata-kata, tapi aku mau kamu tahu kalau kehadiran kamu berarti banget buat aku.</p>
+          <p>Makasih karena sudah jadi bagian dari hari-hariku. Bahkan hal kecil tentang kamu bisa bikin hari yang biasa aja terasa lebih menyenangkan. Aku suka cara kita punya cerita sendiri, candaan sendiri, dan kenangan yang mungkin kelihatannya sederhana buat orang lain, tapi berharga buat aku.</p>
+          <p>Aku nggak bisa janji semuanya akan selalu mudah. Tapi aku mau terus belajar memahami kamu, dengerin kamu, dan tumbuh bareng kamu. Semoga kita selalu punya alasan buat saling memilih, bahkan di hari-hari yang nggak sempurna.</p>
+          <p>Kalau suatu hari kamu lupa betapa berharganya kamu, semoga halaman kecil ini bisa mengingatkan kamu lagi.</p>
+          <p class="signature">with all my love,<br><strong>orang yang sayang banget sama kamu ♡</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal" id="question">
+      <div class="section-inner">
+        <p class="section-label">one tiny question</p>
+        <h2 class="section-title">Satu pertanyaan lagi...</h2>
+        <p class="intro">Jawab dari hati, ya. Nggak ada jawaban yang harus dipaksakan. 💗</p>
+        <div class="proposal-box">
+          <div class="heart">💌</div>
+          <h3 id="questionText">Mau jadi pacarku? ♡</h3>
+          <div class="actions" id="proposalActions">
+            <button class="btn" id="yesButton">Mauuu! 💗</button>
+            <button class="btn light" id="noButton">Hmm, pikir dulu 🙈</button>
+          </div>
+          <div id="yesMessage" class="hidden" aria-live="polite">AAAAA 🥹💗 makasih udah jadi bagian dari ceritaku. Sini peluk jauh dulu! ♡</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="tiny-heart">♡</div><p>Dibuat dengan banyak rasa sayang.</p><p>you + me + all the little things ✿</p></footer>
+</div>
+
+<script>
+const PASSWORD = "sayangku"; // GANTI dengan password pilihanmu
+const form = document.getElementById("passwordForm");
+const passwordInput = document.getElementById("passwordInput");
+const errorBox = document.getElementById("error");
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  if (passwordInput.value === PASSWORD) {
+    document.getElementById("lock").classList.add("hidden");
+    document.getElementById("site").classList.remove("hidden");
+    window.scrollTo(0, 0);
+  } else {
+    errorBox.textContent = "Eits, password-nya belum tepat. Coba lagi yaa ♡";
+    passwordInput.value = "";
+    passwordInput.focus();
+  }
+});
+
+const song = document.getElementById("song");
+const musicButton = document.getElementById("musicButton");
+musicButton.addEventListener("click", async () => {
+  try {
+    if (song.paused) {
+      await song.play();
+      musicButton.textContent = "Ⅱ Jeda musik";
+    } else {
+      song.pause();
+      musicButton.textContent = "♫ Putar musik";
+    }
+  } catch (e) {
+    musicButton.textContent = "Tambahkan lagu.mp3 dulu ♡";
+  }
+});
+
+const noButton = document.getElementById("noButton");
+const questionText = document.getElementById("questionText");
+const noLines = ["Yakin nih? 🥺", "Boleh dipikir pelan-pelan kok ♡", "Aku tunggu jawaban jujurmu 💌", "Jangan asal jawab, yaa 🙈"];
+let noCount = 0;
+noButton.addEventListener("click", () => {
+  questionText.textContent = noLines[noCount % noLines.length];
+  noCount++;
+});
+document.getElementById("yesButton").addEventListener("click", () => {
+  document.getElementById("yesMessage").classList.remove("hidden");
+  document.getElementById("proposalActions").classList.add("hidden");
+  questionText.textContent = "Kamu memilih kita. ♡";
+  document.getElementById("yesMessage").scrollIntoView({behavior:"smooth",block:"center"});
+});
+</script>
+</body>
+</html>
